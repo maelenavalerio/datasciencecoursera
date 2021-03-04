@@ -1,0 +1,288 @@
+---
+title: "First Steps in RStudio"
+author: "María Elena Valerio Ortiz"
+date: "3/3/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Creating a folder on local disck C
+
+We have to be ordered to download R and RStudio, due to RStudio requires Rtools to compile packages on Windows. We are going to create a folder called **R**. In this folder we are going to save R, RStudio and Rtools.
+
+<div style="text-align: center">
+![R Folder](Folder.png)
+<div/>
+
+### 1.- R, Rstudio and Rtools download
+We can save the following files in other folder on the desktop.
+
+We are going to download R 4.0.4 for windows from this link https://cran.r-project.org/bin/windows/base/.
+
+<div style="text-align: center">
+![https://cran.r-project.org/bin/windows/base/.](Cran.png)
+\\
+
+After that, from the next link we are going to download RStudio for windows https://rstudio.com/products/rstudio/download/.
+
+<div style="text-align: center">
+![https://rstudio.com/products/rstudio/download/](RStudio.png)
+<div/>
+
+\\
+
+Finally, we are going to download Rtools40 for windows from the next link https://cran.r-project.org/bin/windows/Rtools/. Rtools is from Cran the same as R. We are going to choose the 64-bit version.
+
+<div style="text-align: center">
+![https://cran.r-project.org/bin/windows/Rtools/](Rtools.png)
+<div/>
+
+### 2.- R installation
+
+Execute R as an administrador
+
+\\
+
+<div style="text-align: center">
+![](ExecuteR.png)
+<div/>
+
+\\
+
+Choose a language
+
+\\
+
+<div style="text-align: center">
+![](ExecuteR2.png)
+<div/>
+
+\\
+
+When we arrive at the following screen we have to change the default address by the R folder on local disk. Then, we are going to do the same thing for the other two, RStudio and Rtools.
+
+\\
+
+<div style="text-align: center">
+![](ExecuteR3.png)
+<div/>
+
+\\
+
+<div style="text-align: center">
+![](ExecuteR4.png)
+<div/>
+
+\\
+
+At the end we press the "Finish" button.
+
+Before to continue with the other installations, we have to go to properties on the R-4.0.4 folder located in R folder on local disk C. 
+
+\\
+
+<div style="text-align: center">
+![](PropertiesR.png)
+<div/>
+
+\\
+
+After the above, we uncheck read only option, click apply then OK.
+
+\\
+
+<div style="text-align: center">
+![](PropertiesR2.png)
+<div/>
+
+\\
+
+<div style="text-align: center">
+![](PropertiesR3.png)
+<div/>
+
+\\
+
+### 3.- RStudio installation
+
+Analogously we execute RStudio as an administrador and change the default address. Finally, we install RStudio.
+
+\\
+
+<div style="text-align: center">
+![](ExecuteRStudio.png)
+<div/>
+
+<div style="text-align: center">
+![](ExecuteRStudio2.png)
+<div/>
+
+<div style="text-align: center">
+![](ExecuteRStudio3.png)
+<div/>
+
+\\
+
+### 4.- Rtools installation
+
+Execute Rtools as an administrator, change the default address and install.
+
+\\
+
+<div style="text-align: center">
+![](ExecuteRtools.png)
+<div/>
+
+<div style="text-align: center">
+![](ExecuteRtools2.png)
+<div/>
+
+\\
+
+### The last steps to compile R packages
+
+We need to perform one more step to be able to compile R packages. In the link before we downloaded Rtools40 (https://cran.r-project.org/bin/windows/Rtools/) we have an instructions that we going to copy and paste an R Script.
+
+\\
+
+<div style="text-align: center">
+![](Packages.png)
+<div/>
+
+<div style="text-align: center">
+![](Packages2.png)
+<div/>
+
+\\
+
+By the other hand, we have to go to "Edit the system enviroment variables".
+
+\\
+
+<div style="text-align: center">
+![](Packages3.png)
+<div/>
+
+\\
+
+Go to Enviroment Variables.
+
+\\
+
+<div style="text-align: center">
+![](Packages4.png)
+<div/>
+
+\\
+
+In the next screen click on New and at the name of variable write "RTOOLS40_HOME"
+<div style="text-align: center">
+![](Packages5.png)
+<div/>
+
+<div style="text-align: center">
+![](Packages6.png)
+<div/>
+
+\\
+
+Now in the Rtools40 folder located in the R folder on the local disk C, we have to copy the path of the folder and paste it in the variable value, we add a slash.
+
+\\
+
+<div style="text-align: center">
+![](Packages7.png)
+<div/>
+
+<div style="text-align: center">
+![](Packages8.png)
+<div/>
+
+<div style="text-align: center">
+![](Packages9.png)
+<div/>
+
+\\
+
+Click Ok and we repeat the steps for the quadrant above.
+
+\\
+
+<div style="text-align: center">
+![](Packages10.png)
+<div/>
+
+\\
+
+In the first quadrant select the "Path", click Edit then New and write 
+%RTOOLS40_HOME% \ usr \ bin \
+
+\\
+
+<div style="text-align: center">
+![](Packages11.png)
+<div/>
+
+
+<div style="text-align: center">
+![](Packages12.png)
+<div/>
+
+\\
+
+We have repeat the steps for the "Path" in the lower quadrant. At the end click OK.
+
+\\
+
+<div style="text-align: center">
+![](Packages13.png)
+<div/>
+
+\\
+
+For finishing click OK.
+
+\\
+
+<div style="text-align: center">
+![](Packages14.png)
+<div/>
+
+\\
+
+We created a new R Script and copy functions from Cran page for Rtools40. We are goint to execute **Sys.which("make")**.
+
+\\
+
+<div style="text-align: center">
+![](Script.png)
+<div/>
+
+\\
+
+We execute **writeLines()** function.
+
+\\
+
+<div style="text-align: center">
+![](Script2.png)
+<div/>
+
+\\
+
+Finally, we install an R package from source to check if the above works.
+
+\\
+
+<div style="text-align: center">
+![](Script3.png)
+<div/>
+
+\\
+
+# **Now we are ready to continue learning!**
+
+\\
